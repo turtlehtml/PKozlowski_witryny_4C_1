@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p><strong>Ciąg Fibonacciego</strong>to ciąg liczb naturalnych określany rekurencyjne</p>
+    <p><code>f(n) = F<sub>n-1</sub> + F<sub>n-2</sub> dla n>0</code></p>
+    <ul style="list-style-type:square;">
+        <li><strong><i>F</i><sub>0</sub></strong> = 0</li>
+        <li><strong><i>F</i></strong> = 1</li>
+        <li><strong><i>F</i></strong> = 1</li>
+        <li><strong><i>F</i></strong> = 2</li>
+        <li><strong><i>F</i></strong> = 3</li>
+        <li><strong><i>F</i></strong> = 5</li>
+        <li><strong><i>F</i></strong> = 8</li>
+        <li><strong><i>F</i></strong> = 13</li>
+        <li><strong><i>F</i></strong> = 21</li>
+        <li><strong><i>F</i></strong> = 34</li>
+    </ul>
+    <pre>
+        Fibonacci( n )
+        if n=0 then return 0
+        if n=1 then return 1
+        f' ← 0
+        f ← 1
+        for i ← 2 to n
+          do
+            m ← f + f'
+            f' ← f
+            f ← m
+          end
+        return f
+    </pre>
+    <a href="https://pl.wikipedia.org/wiki/Fibonacci">Życiorys Fibonacciego</a>
+</body>
+</html>
