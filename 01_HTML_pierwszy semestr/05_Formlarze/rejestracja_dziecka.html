@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: solid 1px lightgrey;
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr,
+        td {
+            border: solid 1px lightgrey;
+            padding: 15px;
+        }
+        .imie{
+            text-align: right;
+        }
+        .cos{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <form action="formularz_akcja.html">
+            <tr>
+                <td class="imie"><label for="fname">Imię:*</label></td>
+                <td class="cos"><input type="text" id="fname"></td>
+                <td class="imie"><label for="lname">Nazwisko*</label></td>
+                <td class="cos"><input type="text" id="lname"></td>
+                <td class="imie"><label for="miejsce">Miejscowość urodzenia:*</label></td>
+                <td class="cos"><input type="text" id="miejsce"></td>
+            </tr>
+            <tr>
+                <td class="imie"><label for="sname">Drugie imię:</label></td>
+                <td class="cos"><input type="text" id="sname"></td>
+                <td class="imie"><label for="date">Data urodzenia:*</label></td>
+                <td><input type="date"></td>
+                <td class="imie"><label for="woje">Województwo urodzenia:*</label></td>
+                <td>
+                    <select name="cos" id="woje">
+                        <option value="cos"></option>
+                        <option value="1">woj.dolnośląskie</option>
+                        <option value="2">woj.kujawsko-pomorskie</option>
+                        <option value="3">woj.lubuskie</option>
+                        <option value="4">woj.łódzkie</option>
+                        <option value="5">woj.małopolskie</option>
+                        <option value="6">woj.mazowieckie</option>
+                        <option value="7">woj.lubuskie</option>
+                        <option value="8">woj.opolskie</option>
+                        <option value="9">woj.podkarpackie</option>
+                        <option value="10">woj.podlaskie</option>
+                        <option value="11">woj.pomorskie</option>
+                        <option value="12">woj.śląskie</option>
+                        <option value="13">woj.świętokrzyskie</option>
+                        <option value="14">woj.warmińsko-mazurskie</option>
+                        <option value="15">woj.wielkopolskie</option>
+                        <option value="16">woj.zachodniopomorskie</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: center;"><input type="submit" value="Wyślij"></td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>
