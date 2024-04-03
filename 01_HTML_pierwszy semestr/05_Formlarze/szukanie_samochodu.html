@@ -9,6 +9,7 @@
         table {
             border-collapse: collapse;
             width: 100%;
+            table-layout: fixed;
         }
 
         td,
@@ -69,6 +70,8 @@
             </td>
             <td>
                 <label for="Cena">Cena do:</label><br>
+                <input type="range" id="Cena" min="2000" max="500000" step="1000" oninput="this.nextElementSibling.value = this.value">
+                <output>2000</output>
             </td>
         </tr>
     </table>
