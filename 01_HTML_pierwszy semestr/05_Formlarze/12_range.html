@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="formularz_akcja.html">
+        <fieldset>
+            <legend>range</legend>
+            <label for="zakres">Ustaw wartość pomiędzy 100 a 200</label>
+            <input type="range" value="100" id="zakres" name="range" min="100" max="200"
+                oninput="this.nextElementSibling.value = this.value">
+            <output>100</output>
+            <br>
+            <br>
+            <input type="submit" value="Wyślij">
+        </fieldset>
+    </form>
+</body>
+
+</html>

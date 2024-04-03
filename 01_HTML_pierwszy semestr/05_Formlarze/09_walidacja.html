@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="formularz_akcja.html">
+        <fieldset>
+            <legend>Prosta walidacja po stronie klienta</legend>
+            <strong>tel:</strong><label for="phone">Podaj numer telefonu:</label>
+            <input type="tel" id="phone" pattern="[0-9] {3} - [0-9] {3} - [0-9] {3}" name="phone"
+                placeholder="123-456-789">
+            <br>
+            <br>
+            <strong>number</strong><label for="number">Podaj liczbę pomiedzy -50 a 0:</label>
+            <input type="number" id="number" min="-50" max="0" step="5">
+            <br>
+            <br>
+            <strong>url:</strong><label for="url">Podaj adres URL:</label>
+            <input type="url" id="url" name="url">
+            <br>
+            <br>
+            <strong>email:</strong><label for="e-mail">Podaj e-mail:</label>
+            <input type="email" id="e-mail" name="e-mail">
+            <br>
+            <br>
+            <input type="submit" value="Wyślij">
+        </fieldset>
+    </form>
+</body>
+
+</html>
