@@ -27,11 +27,11 @@
     <table>
         <tr>
             <td>
-                <label for="Marka">Marka:<span>*</span></label><br>
+                <label for="Marka">Marka:<span>*</span></label>
                 <input type="text" required id="Marka">
             </td>
             <td rowspan="2">
-                <label for="nadwozie">Typ nadwozia:<span>*</span></label><br>
+                <label for="nadwozie">Typ nadwozia:<span>*</span></label>
                 <select name="nadwozia" id="nadwozie" multiple size="5" required>
                     <option value="coupe">coupé</option>
                     <option value="hatchback">hatchback</option>
@@ -41,12 +41,12 @@
                 </select>
             </td>
             <td>
-                <label for="data">Miesiąc i rok produkcji:</label><br>
+                <label for="data">Miesiąc i rok produkcji:</label>
                 <input type="date" id="data">
             </td>
             <td>
-                <label for="Przebieg">Przebieg:</label><br>
-                <input type="range" id="Przebieg" min="25000" max="250000" step="25000"
+                <label for="Przebieg">Przebieg:</label>
+                <input type="range" id="Przebieg" min="25000" max="250000" step="25000" value="25000+"
                     oninput="this.nextElementSibling.value = this.value">
                 <output>25000</output>
             </td>
@@ -54,11 +54,11 @@
         </tr>
         <tr>
             <td>
-                <label for="Model">Model:</label><br>
+                <label for="Model">Model:</label>
                 <input type="text" id="Model">
             </td>
             <td>
-                <label for="paliwo">Rodzaj paliwa:</label><br>
+                <label for="paliwo">Rodzaj paliwa:</label>
                 <select name="paliwo" id="paliwo">
                     <option value="benzyna">benzyna</option>
                     <option value="benzyna_elektryk">benzyna + elektryk</option>
@@ -68,7 +68,10 @@
                 </select>
             </td>
             <td>
-                <label for="Cena">Cena do:</label><br>
+                <label for="Cena">Cena do:</label>
+                <input type="range" id="Cena" min="2000" max="500000" step="1000" value="2000"
+                    oninput="this.nextElementSibling.value = this.value">
+                <output>2000</output>
             </td>
         </tr>
     </table>

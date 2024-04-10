@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="formularz_akcja.html">
+        <fieldset>
+            <legend>Predefiniowanie wartości</legend><br>
+            <label for="datalista">Podaj nazwę przeglądarki:</label>
+            <input list="browsers" id="datalista" name="Lista">
+            <datalist id="browsers">
+                <option value="Internet Explorer"></option>
+                <option value="Firefox"></option>
+                <option value="Chrome"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+            </datalist><br><br>
+            <input type="submit" value="Wyślij">
+        </fieldset>
+    </form>
+</body>
+</html>
