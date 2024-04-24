@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Papyrus;
+            font-size: large;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: 75% 25%;
+        }
+
+        td {
+            border: 1px dotted grey;
+            padding: 10px 30px 10px 10px;
+
+        }
+
+        .input {
+            background-color: lightblue;
+            border: 2px solid cadetblue;
+            font-family: PoorRichard;
+            font-size: large;
+            padding: 5px 10px;
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form action="formularz_akcja.html">
+        <table>
+            <tr>
+                <td><label for="email">Adres e-mail:</label></td>
+                <td>
+                    <input type="email" placeholder="adres@email.com" class="input" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="haslo">Hasło:</label></td>
+                <td>
+                    <input type="text" placeholder="minimum 8 znaków" class="input" id="haslo">
+                </td>
+            </tr>
+            <tr>
+                <td>Rola:</td>
+                <td>
+                    <input type="radio" name="kandydant" id="kandydat" checked>
+                    <label for="kandydat">kandydat</label>
+                    <input type="radio" name="aplikant" id="aplikant">
+                    <label for="aplikant">aplikant</label>
+                    <input type="radio" name="kursant" id="kursant">
+                    <label for="kursant">kursant</label>
+                    <input type="radio" name="absolwent" id="absolwent">
+                    <label for="absolwent">absolwent</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Grupa:</td>
+                <td>
+                    <input type="checkbox" id="wiosenna" name="wiosna">
+                    <label for="wiosenna">wiosenna</label>
+                    <input type="checkbox" name="aplikant" id="letnia">
+                    <label for="letnia">letnia</label>
+                    <input type="checkbox" name="jesienna" id="jesienna">
+                    <label for="jesienna">jesienna</label>
+                    <input type="checkbox" name="zimowa" id="zimowa">
+                    <label for="zimowa">zimowa</label>
+
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Wyślij" style="padding: 10px; background-color: lightblue; border: 2px solid cadetblue; 
+font-family: PoorRichard;font-size: large; "></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
