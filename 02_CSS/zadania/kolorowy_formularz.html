@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: papayawhip;
+            font-family: Arial;
+            font-size: 1rem;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+        }
+
+        tr,
+        td {
+            border: 1px solid goldenrod;
+            padding: 10px;
+            text-align: center;
+        }
+        textarea{
+            background-color: sandybrown;
+            border: 1px solid saddlebrown;
+            border-radius: 2px;
+        }
+        input{
+            background-color: lavenderblush;
+            border: 1px solid saddlebrown;
+            border-radius: 2px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+    <table>
+        <tr>
+            <td><input type="text" placeholder="pierwsze imię"></td>
+            <td><input type="text" placeholder="drugie imię"></td>
+        </tr>
+        <tr>
+            <td><input type="range" value="-10" min="-10" max="0" step="0.1"
+                    oninput="getElementById('wsp').value = this.value"></td>
+            <td><output id="wsp">-10</output></td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="2">
+                <textarea name="" id="" cols="48" rows="5"></textarea>
+            </td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <td><input type="search" placeholder="szukaj"></td>
+            <td>
+                <input list="postacie" placeholder="wybierz postać">
+                <datalist placeholder="wybierz postać" id="postacie">
+                    <option value="Jack"></option>
+                    <option value="Wendy"></option>
+                    <option value="Danny"></option>
+                </datalist>
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="alert(`Element <button>`);" type="button">Pokaż okienko alert()</button></td>
+            <td><input type="reset" value="Resetuj"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="image" src="https://loremflickr.com/350/200/dog" /></td>
+        </tr>
+
+    </table>
+    </form>
+</body>
+
+</html>
