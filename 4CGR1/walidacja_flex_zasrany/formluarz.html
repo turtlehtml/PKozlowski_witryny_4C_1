@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <h2>Umów wizytę lekarską</h2>
+        <fieldset>
+            <legend>
+                Dane pacjenta
+            </legend>
+            <div class="poziomo">
+                <div class="conteiner">
+                    <label for="imie">Imię:</label>
+                    <input type="text" id="imie" required placeholder="Wprowadz imię:">
+                </div>
+                <div class="conteiner">
+                    <label for="nazwisko">Nazwisko:</label>
+                    <input type="text" id="nazwisko" placeholder="Wprowadz nazwisko:" required>
+                </div>
+            </div>
+                <label for="PESEL">PESEL:</label><br>
+                <input type="number" id="PESEL" maxlength="11" required placeholder="Wprowadż PESEL"><br>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" required placeholder="Wprowadz e-mail"><br>
+                <label for="telefon">Numer telefonu:</label><br>
+                <input type="tel" id="telefon" required placeholder="Wprowadż numer telefonu (np.123 456 789)"><br>
+                <div class="poziomo">
+                    <div class="conteiner">
+                        <label for="Ulica">Ulica:</label>
+                        <input type="text" id="Ulica" placeholder="Wprowadż ulicę" required>
+                    </div>
+                    <div>
+                        <label class="prawo" for="numerdom">Numer domu:</label>
+                        <input class="prawo" type="text" id="numerdom" placeholder="Wprowadź numer domu" required>
+                    </div>
+                </div>
+                <label class="prawo" for="numermiesz">Numer mieszkania:</label><br>
+                <input class="prawo" type="text" name="miesz" id="numermiesz"
+                    placeholder="Wprowadź numer mieszkania (opcjonalnie)">
+                <br>
+                <label class="prawo" for="kodpocz">Kod pocztowy:</label><br>
+                <input class="prawo" type="text" name="kodpocz" id="kodpocz" placeholder="00-000" required><br>
+
+                <label class="prawo" for="miasto">Miasto:</label><br>
+                <input class="prawo" type="text" name="miasto" id="miasto" placeholder="Wprowadź miasto" required>
+
+                <br>
+                <label for="urodzenia">Data urodzenia:</label><br>
+                <input type="date" name="urodzenia" id="urodzenia" required>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Dane dotyczące wizyty
+            </legend>
+            <label for="lekarz">Lekarz:</label><br>
+            <input list="lekarzlista" name="lekarz" id="lekarz" required><br>
+            <datalist id="lekarzlista">
+                <option value="Jan Kowalski"></option>
+                <option value="Filip Paździerz"></option>
+                <option value="Piotr Poros"></option>
+                <option value="Robert Niemiec"></option>
+            </datalist>
+            <label for="wizyta">Data wizyty:</label><br>
+            <input type="date" name="wizyta" id="wizyta" required><br>
+            <label for="godz">Godzina wizyty:</label><br>
+            <input type="time" name="godz" id="godz" required><br>
+            <label for="uwaga">Dodatkowe uwagi:</label><br>
+            <textarea name="uwaga" id="uwaga" rows="5" placeholder="Podaj dodatkowe informacje..."></textarea>
+        </fieldset><br>
+        <fieldset class="guzik">
+            <input type="submit" value="Umów wizytę" id="przycisk" required>
+        </fieldset>
+    </form>
+</body>
+
+</html>
