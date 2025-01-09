@@ -1,0 +1,76 @@
+body {
+	background-color: rgb(52, 50, 50);
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+div {
+	width: 250px;
+	height: 200px;
+}
+#size {
+	background-color: darkblue;
+	width: 300px;
+	height: 300px;
+}
+#p-size {
+	background-color: cornflowerblue;
+	width: 75%;
+}
+#border-width{
+    background-color: pink;
+    border-style: solid;
+    border-color: rgb(191,58,191);
+    border-top-width: 15px;
+    border-bottom-width: 15px;
+    border-left-width: 15px;
+    border-right-width: 15px;
+}
+#short{
+    background-color: yellow;
+    border-style: dotted;
+    border-color: brown;
+    border-width: 10px 15px 20px 25px;
+}
+#allinone{
+    background-color: lightgreen;
+    border: 20px double darkgreen;
+}
+#color{
+    border-style: dashed;
+    background-color: beige;
+    border-width: 15px;
+    border-top-color: pink;
+    border-right-color: #ff889c;
+    border-bottom-color: #ff5773;
+    border-left-color: #c23260;
+}
+#shortcolor{
+    background-color: burlywood;
+    border-style: groove;
+    border-width: 15px;
+    border-color: lightyellow yellow orange brown;
+}
+#border{
+    background-color: lightgray;
+    border: 10px double red;
+}
+#radius1{
+    background-color: gold;
+    border: 5px solid brown;
+    border-radius: 20px;
+}
+#radius2{
+    background-color: lightgray;
+    border-width: 10px 20px;
+    border-style: ridge;
+    border-color: blue;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#radius3{
+    background-color: indianred;
+    border: 10px dashed;
+    border-color: lime gold blue aqua;
+    border-radius: 50%;
+
+}

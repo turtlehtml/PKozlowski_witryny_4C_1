@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .minw{
+            min-width: 350px;
+            width: 50px;
+            height: 150px;
+            border: 2px red solid;
+            background-color: lightskyblue;
+            color: white;
+            text-align: center;
+            font-size: medium;
+            margin: auto;
+        }
+        .maxw{
+            max-width: 250px;
+            width: 300px;
+            height: 150px;
+            border: 2px solid red;
+            background-color: lightskyblue;
+            color: white;
+            text-align: center;
+            font-size: medium;
+            margin: auto;
+        }
+        .minh{
+            min-height: 350px;
+            height: 50px;
+            width: 150px;
+            border: 2px solid red;
+            background-color: lightskyblue;
+            color: white;
+            text-align: center;
+            font-size: medium;
+            margin: auto;
+            
+        }
+        .maxh{
+            max-height: 250px;
+            height: 300px;
+            width: 150px;
+            border: 2px solid red;
+            background-color: lightskyblue;
+            color: white;
+            text-align: center;
+            font-size: medium;
+            box-shadow: 2px black;
+            margin: auto;
+        }
+        .over{
+            overflow: auto;
+            width: 250px;
+            height: 250px;
+            border: 2px dotted rgb(158, 151, 151);
+            font-size: medium;
+            text-align: center;
+            margin: auto;
+        }
+        .elementy{
+            font-size: large;
+            border: 2px solid;
+            border-color: red green blue yellow;
+        }
+        body{
+            background-color: rgb(249, 238, 236);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .ha{
+            text-align: center;
+            border: 2px dotted lightskyblue;
+            border-width: initial;
+        }   
+    </style>
+</head>
+<body>
+    <h2 class="ha">MIN-WIDTH</h2>
+    <p class="elementy">Pozwala określić nam minimalną szerokość danego obiektu. Min-width nadpisuje "max-width" oraz "width", gdy "min-width" jest większy od "max-width".</p>
+    <p class="minw">Przykładowy tekst</p>
+    <h2 class="ha">MAX-WIDTH</h2>
+    <p class="elementy">Pozwala ustawić maksymalną szerokość elementu. Zapobiega zwiększaniu się używanej wartości właściwości szerokość powyżej wartości określonej przez max-width.</p>
+    <p class="maxw">Przykładowy tekst</p>
+    <h2 class="ha">MIN-HEIGHT</h2>
+    <p class="elementy">Właściwość CSS min-height służy do ustawienia minimalnej wysokości elementu. Określa najmniejszą wysokość, jaką element może mieć, niezależnie od jego zawartości.</p>
+    <p class="minh">Przykładowy tekst</p>
+    <h2 class="ha">MAX-HEIGHT</h2>
+    <p class="elementy">Właściwość CSS max-height ustala maksymalną wysokość elementu. Oznacza to, że element nie będzie wyższy niż wartość określona przez max-height, niezależnie od jego zawartości.</p>
+    <p class="maxh">Przykładowy tekst</p>
+    <h2 class="ha">OVERFLOW</h2>
+    <p class="elementy">Właściwość CSS overflow kontroluje, co się dzieje z zawartością elementu, gdy ta przekracza jego rozmiary (szerokość lub wysokość).</p>
+    <p class="over">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quam saepe eveniet praesentium minus atque error, aspernatur sint at eaque similique, quibusdam quaerat ut labore nesciunt eum? Blanditiis, quasi. Cumque. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam quam, blanditiis ex nostrum, deserunt modi commodi rem expedita voluptatem ullam quasi nesciunt facilis, aliquam dolores esse minima sit hic quas! Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minus vel ratione totam tenetur maxime adipisci optio numquam tempore autem doloribus doloremque, commodi repellendus dolor illum qui distinctio eligendi temporibus.</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    background-color: #BFBFBF;
+}
+.baner{
+    background-color: #4CAF50;
+    color: white;
+}
+.info{
+    background-color: white;
+    box-shadow: 10px 10px 10px rgb(85,85,85);
+}
+h1,h3{
+    letter-spacing: 5px;
+}
+span{
+    text-decoration: underline;
+    color: #4CAF50;
+    text-transform: uppercase;
+}
+.czerwony{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}

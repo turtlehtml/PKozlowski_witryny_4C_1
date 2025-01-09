@@ -1,0 +1,15 @@
+p{
+    border: 3px solid black;
+    width: 250px;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111111
+}
+.obramowanie{
+    border-color: blue;
+    border-width: 5px 3px;
+}
+.kolor{
+    border-color: red green blue yellow;
+}
