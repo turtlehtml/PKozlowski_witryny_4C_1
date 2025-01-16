@@ -1,0 +1,30 @@
+img{
+    width: 200px;
+    box-shadow: 2px 2px 10px lightgreen;
+}
+.description{
+    font-size: 20px;
+}
+#czas{
+    font-weight: bold;
+}
+.etap{
+    color: lightgrey;
+}
+.cytat{
+
+}
+.link{
+    color: green;
+    text-decoration: none;
+}
+body{
+    font-family: Helvetica;
+    color: brown;
+}
+.cytat .link{
+    font-family: monospace;
+}
+*{
+    border: solid;
+}
