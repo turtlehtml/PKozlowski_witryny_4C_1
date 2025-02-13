@@ -1,0 +1,41 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+table{
+    width: 100%;
+}
+h1{
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    background-color: #eeeeee;
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    background-color: #eeeeee;
+    text-align: center;
+    margin: 0%;
+}
+td,th{
+    padding: 7px 10px 10px 10px;
+}
+th{
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-top: 1px solid #999;
+    border-bottom: 2px solid #111111;
+}
+.font{
+    font-family: "Sacramento", serif;
+    font-weight: 300px;
+}
+.cur{
+    font-family: 'Courier New', Courier, monospace;
+}
+.niebieskie:hover{
+    background-color: lightblue;
+}
+.lubie{
+    background-color: #eeeeee;
+}

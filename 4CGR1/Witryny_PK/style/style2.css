@@ -1,0 +1,60 @@
+body{
+    border: 3px double dodgerblue;
+    margin: 0 auto;
+    padding: 5px;
+    width: 70%;
+}
+.plan{
+    border-top: 2px solid navy;
+    border-bottom: 2px solid navy;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
+.C{
+    border: 3px dotted red;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    
+}
+.CC{
+    border: 5px double blue;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+.CCC{
+    border: 4px ridge purple;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+}
+.CCCC{
+    margin: 0 auto;
+    border: 5px dashed lightgreen;
+    width: 50%;
+    border-radius: 10px;
+    
+}
+.jeden{
+    text-align: center;
+    list-style: disc;
+}
+.dwa{
+    list-style: inside upper-roman;
+}
+.trzy{
+    list-style: outside decimal-leading-zero;
+}
+.cztery{
+    list-style-image: url(/zdjecia/movie.png);
+}
+.kolor{
+    background-color: lightgray;
+}
