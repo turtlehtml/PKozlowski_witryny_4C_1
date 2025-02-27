@@ -1,0 +1,22 @@
+.kontener1, .kontener2{
+    width: 600px;
+    background-color: rgb(134, 236, 219);
+    margin: 20px auto;
+}
+.menu1, .menu2{
+    background-color: lightgray;
+    display: inline-block;
+    width: 96px;
+    text-align: center;
+    padding: 10px;
+    /* margin: 4px; */
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+.menu2:hover{
+    background-color: grey;
+}
+.menu2:active{
+    background-color: brown;
+}

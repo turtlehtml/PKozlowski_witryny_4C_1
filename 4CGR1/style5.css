@@ -1,0 +1,28 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+div{
+    text-transform: uppercase;
+}
+.lato{
+    background-color: #219921;
+    color: white;
+    width: 800px;
+    text-align: center;
+    height: 200px;
+    display: inline-block;
+}
+.jesien{
+    background-color: orange;
+    color: white;
+    width: 800px;
+    height: 200px;
+    text-align: center;
+    display: inline-block;
+
+}
+.contener{
+    border: 1px solid black;
+    box-sizing: border-box;
+    
+}
