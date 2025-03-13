@@ -1,0 +1,59 @@
+body{
+    background-color: lightblue;
+}
+h1{
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+p{
+    color: darkgray;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20px;
+}
+.button{
+    background-color: darkblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: white;
+    color: navy;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border-left: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+}
+.vvv{
+    border: 2px solid navy;
+    border-radius: 5px;
+    background-color: white;
+}
+.con1{
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    vertical-align: middle;
+
+}
+.con2{
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    vertical-align: middle;
+}
+.con3{
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    vertical-align: middle;
+}
+/* .big{
+    display: flex;
+    align-items: center;
+} */

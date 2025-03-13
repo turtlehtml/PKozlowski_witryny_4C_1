@@ -1,0 +1,32 @@
+.ramka{
+    border: 1px solid blue;
+    width: 1000px;
+    margin: 0 auto;
+}
+.con1{
+    background-color: rgb(86, 1, 112);
+    color: white;
+    height: 100px;
+    position: relative;
+}   
+.con2{
+
+}
+.con3{
+    background-color:rgb(86, 1, 112);
+    color: white;
+    text-align: center;
+    padding: 40px;
+
+    
+}
+.abcd{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.abc{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
