@@ -14,9 +14,19 @@ p{
     margin: 5px;
     padding: 5px;
     background-color: lightgray;
+    float: left;
+    /* height: 150px; */
 }
 span{
     font-weight: bold;
     letter-spacing: 0.3em;
     text-shadow: 1px 1px grey;
+}
+.cos{
+    clear: left;
+}
+div{
+    border: 1px solid black;
+    overflow: auto;
+    width: 100%;
 }
