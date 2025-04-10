@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position & Z-Index Guide</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 50px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+        }
+
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .demo-container {
+            border: 2px solid #3498db;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+
+        .note {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: #2c3e50;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            z-index: 1000;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #3498db;
+        }
+
+        /* Static Demo */
+        .static-demo .box1 {
+            background-color: #3498db;
+        }
+
+        .static-demo .box2 {
+            background-color: #e74c3c;
+            margin-top: 10px;
+        }
+
+        /* Relative Demo */
+        .relative-demo .box1 {
+            background-color: #3498db;
+            position: relative;
+            left: 50px;
+            top: 20px;
+        }
+
+        .relative-demo .box2 {
+            background-color: #e74c3c;
+            margin-top: 10px;
+        }
+
+        /* Absolute Demo */
+        .absolute-demo .box1 {
+            background-color: #3498db;
+        }
+
+        .absolute-demo .box2 {
+            background-color: #e74c3c;
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        .absolute-demo .box3 {
+            background-color: #2ecc71;
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+        }
+
+        /* Fixed Demo */
+        .fixed-demo {
+            height: 200px;
+            overflow-y: scroll;
+        }
+
+        .fixed-demo .scroll-content {
+            height: 500px;
+            position: relative;
+            background: repeating-linear-gradient(45deg,
+                    #f8f9fa,
+                    #f8f9fa 10px,
+                    #f1f3f5 10px,
+                    #f1f3f5 20px);
+        }
+
+        .fixed-demo .box1 {
+            background-color: #3498db;
+            position: fixed;
+            top: 60px;
+            right: 60px;
+            z-index: 10;
+        }
+
+        /* Sticky Demo */
+        .sticky-demo {
+            height: 200px;
+            overflow-y: scroll;
+        }
+
+        .sticky-demo .scroll-content {
+            height: 500px;
+            background: repeating-linear-gradient(45deg,
+                    #f8f9fa,
+                    #f8f9fa 10px,
+                    #f1f3f5 10px,
+                    #f1f3f5 20px);
+        }
+
+        .sticky-demo .box1 {
+            background-color: #3498db;
+            position: sticky;
+            top: 20px;
+            margin: 20px;
+        }
+
+        .sticky-demo .box2 {
+            background-color: #e74c3c;
+            margin: 20px;
+        }
+
+        /* Z-Index Demo */
+        .z-index-demo .box1 {
+            background-color: #3498db;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            z-index: 1;
+        }
+
+        .z-index-demo .box2 {
+            background-color: #e74c3c;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 2;
+        }
+
+        .z-index-demo .box3 {
+            background-color: #2ecc71;
+            position: absolute;
+            left: 150px;
+            top: 150px;
+            z-index: 3;
+        }
+
+        /* Z-Index Stacking Context Demo */
+        .stacking-context-demo .parent1 {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(189, 195, 199, 0.5);
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #7f8c8d;
+        }
+
+        .stacking-context-demo .parent2 {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(241, 196, 15, 0.5);
+            padding: 20px;
+            width: 200px;
+            height: 200px;
+            margin-top: -150px;
+            margin-left: 100px;
+            border: 2px dashed #f39c12;
+        }
+
+        .stacking-context-demo .child1 {
+            background-color: #3498db;
+            position: absolute;
+            z-index: 100;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .stacking-context-demo .child2 {
+            background-color: #e74c3c;
+            position: absolute;
+            z-index: 1;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .demo-container {
+                height: 400px;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CSS Position and Z-Index Guide</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#static">Static</a></li>
+            <li><a href="#relative">Relative</a></li>
+            <li><a href="#absolute">Absolute</a></li>
+            <li><a href="#fixed">Fixed</a></li>
+            <li><a href="#sticky">Sticky</a></li>
+            <li><a href="#z-index">Z-Index</a></li>
+            <li><a href="#stacking-context">Stacking Context</a></li>
+        </ul>
+    </nav>
+
+    <section id="introduction">
+        <h2>Introduction to CSS Positioning</h2>
+        <p>CSS positioning is how we control where elements appear on the page and how they interact with other
+            elements. The <code>position</code> property has five values:</p>
+        <ul>
+            <li><strong>static</strong> - The default positioning</li>
+            <li><strong>relative</strong> - Positioned relative to its normal position</li>
+            <li><strong>absolute</strong> - Positioned relative to its nearest positioned ancestor</li>
+            <li><strong>fixed</strong> - Positioned relative to the viewport</li>
+            <li><strong>sticky</strong> - A hybrid of relative and fixed positioning</li>
+        </ul>
+        <p>Once an element's position property is set (to anything except <code>static</code>), you can use the
+            <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties to position it
+            precisely.</p>
+    </section>
+
+    <section id="static">
+        <h2>Position: Static</h2>
+        <p><code>position: static</code> is the default for all elements. A static positioned element is positioned
+            according to the normal flow of the document. The <code>top</code>, <code>right</code>, <code>bottom</code>,
+            and <code>left</code> properties have no effect on static elements.</p>
+
+        <div class="demo-container static-demo">
+            <div class="demo-box box1">Static Box 1</div>
+            <div class="demo-box box2">Static Box 2</div>
+        </div>
+
+        <pre>
+.box1 {
+    background-color: #3498db;
+    /* No position property - defaults to static */
+}
+
+.box2 {
+    background-color: #e74c3c;
+    margin-top: 10px;
+    /* No position property - defaults to static */
+}
+        </pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> Static positioning is the default. Elements appear in the normal document flow,
+                and position properties (top, right, bottom, left) have no effect.</p>
+        </div>
+    </section>
+
+    <section id="relative">
+        <h2>Position: Relative</h2>
+        <p><code>position: relative</code> positions an element relative to where it would normally be. Setting the
+            <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties will move the
+            element away from its normal position.</p>
+
+        <div class="demo-container relative-demo">
+            <div class="demo-box box1">Relative Box 1</div>
+            <div class="demo-box box2">Static Box 2</div>
+        </div>
+
+        <pre>
+.box1 {
+    background-color: #3498db;
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+
+.box2 {
+    background-color: #e74c3c;
+    margin-top: 10px;
+    /* No position - defaults to static */
+}
+        </pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> With relative positioning, the element still takes up space in its original
+                position in the document flow. Other elements aren't affected by its new position.</p>
+        </div>
+    </section>
+
+    <section id="absolute">
+        <h2>Position: Absolute</h2>
+        <p><code>position: absolute</code> removes the element from the normal document flow. The element is positioned
+            relative to its nearest positioned ancestor (an ancestor with a position value other than
+            <code>static</code>). If there's no positioned ancestor, it uses the document body.</p>
+
+        <div class="demo-container absolute-demo">
+            <div class="demo-box box1">Static Box 1</div>
+            <div class="demo-box box2">Absolute Box 2</div>
+            <div class="demo-box box3">Absolute Box 3</div>
+        </div>
+
+        <pre>
+.box1 {
+    background-color: #3498db;
+    /* No position - defaults to static */
+}
+
+.box2 {
+    background-color: #e74c3c;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.box3 {
+    background-color: #2ecc71;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+        </pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> Absolutely positioned elements are removed from the normal flow. They don't affect
+                other elements' positioning and can overlap with other content.</p>
+        </div>
+    </section>
+
+    <section id="fixed">
+        <h2>Position: Fixed</h2>
+        <p><code>position: fixed</code> positions an element relative to the viewport, which means it stays in the same
+            place even when the page is scrolled. Like absolute positioning, fixed positioning removes the element from
+            the normal document flow.</p>
+
+        <div class="demo-container fixed-demo">
+            <div class="scroll-content">
+                <div class="demo-box box1">Fixed Box</div>
+                <p style="position: absolute; bottom: 10px; left: 10px;">Scroll to see the fixed box stay in place!</p>
+            </div>
+        </div>
+
+        <pre>
+.box1 {
+    background-color: #3498db;
+    position: fixed;
+    top: 60px;
+    right: 60px;
+}
+        </pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> Fixed elements stay in the same position even when the page is scrolled. This is
+                commonly used for navigation bars, back-to-top buttons, and other elements that should always be
+                visible.</p>
+        </div>
+    </section>
+
+    <section id="sticky">
+        <h2>Position: Sticky</h2>
+        <p><code>position: sticky</code> is a hybrid of relative and fixed positioning. The element is treated as
+            <code>relative</code> until it crosses a specified threshold within the viewport, at which point it becomes
+            <code>fixed</code>.</p>
+
+        <div class="demo-container sticky-demo">
+            <div class="scroll-content">
+                <div class="demo-box box1">Sticky Box</div>
+                <div class="demo-box box2">Regular Box</div>
+                <p style="margin: 20px;">Scroll to see the sticky box in action!</p>
+                <div class="demo-box box2">Another Regular Box</div>
+            </div>
+        </div>
+
+        <pre>
+.box1 {
+    background-color: #3498db;
+    position: sticky;
+    top: 20px;
+    margin: 20px;
+}
+
+.box2 {
+    background-color: #e74c3c;
+    margin: 20px;
+}
+        </pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> Sticky positioning is useful for section headings, navigation elements, or
+                anything that should stay visible while its parent is in view but disappear when scrolled past.</p>
+        </div>
+    </section>
+
+    <section id="z-index">
+        <h2>Understanding Z-Index</h2>
+        <p>The <code>z-index</code> property determines the stacking order of elements. Elements with a higher z-index
+            value will appear on top of elements with lower values. Z-index only works on positioned elements (anything
+            except <code>position: static</code>).</p>
+
+        <div class="demo-container z-index-demo">
+            <div class="demo-box box1">z-index: 1</div>
+            <div class="demo-box box2">z-index: 2</div>
+            <div class="demo-box box3">z-index: 3</div>
+        </div>
+
+        <pre>
+.box1 {
+    background-color: #3498db;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    z-index: 1;
+}
+
+.box2 {
+    background-color: #e74c3c;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    z-index: 2;
+}
+
+.box3 {
+    background-color: #2ecc71;
+    position: absolute;
+    left: 150px;
+    top: 150px;
+    z-index: 3;
+}
+        </pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> The larger the z-index value, the closer the element is to the viewer. Z-index can
+                be any integer, including negative values.</p>
+        </div>
+    </section>
+
+    <section id="stacking-context">
+        <h2>Z-Index and Stacking Context</h2>
+        <p>A stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis.
+            Elements within the same stacking context are arranged relative to each other.</p>
+        <p>A new stacking context is formed when an element:</p>
+        <ul>
+            <li>Is the root element (HTML)</li>
+            <li>Has a position value other than <code>static</code> with a z-index value other than <code>auto</code>
+            </li>
+            <li>Has opacity less than 1</li>
+            <li>Has a transform, filter, or perspective property set to a value other than none</li>
+            <li>And several other CSS properties (check MDN for a full list)</li>
+        </ul>
+
+        <div class="demo-container stacking-context-demo">
+            <div class="parent1">
+                Parent 1 (z-index: 1)
+                <div class="demo-box child1">Child 1 (z-index: 100)</div>
+            </div>
+
+            <div class="parent2">
+                Parent 2 (z-index: 2)
+                <div class="demo-box child2">Child 2 (z-index: 1)</div>
+            </div>
+        </div>
+
+        <pre>
+.parent1 {
+    position: relative;
+    z-index: 1;
+    /* Creates a stacking context */
+}
+
+.child1 {
+    position: absolute;
+    z-index: 100;
+}
+
+.parent2 {
+    position: relative;
+    z-index: 2;
+    /* Creates a stacking context */
+}
+
+.child2 {
+    position: absolute;
+    z-index: 1;
+}
+        </pre>
+
+        <div class="note">
+            <p><strong>Note:</strong> Even though Child 1 has a much higher z-index (100) than Child 2 (1), Child 2
+                appears on top. This is because Parent 2 has a higher z-index (2) than Parent 1 (1). Z-indices only
+                compete within the same stacking context.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Summary</h2>
+        <ul>
+            <li><strong>static</strong> - Default positioning, follows normal document flow</li>
+            <li><strong>relative</strong> - Positioned relative to its normal position, still takes up space in the flow
+            </li>
+            <li><strong>absolute</strong> - Removed from the flow, positioned relative to nearest positioned ancestor
+            </li>
+            <li><strong>fixed</strong> - Removed from the flow, positioned relative to the viewport</li>
+            <li><strong>sticky</strong> - Hybrid of relative and fixed, "sticks" when it reaches a specified position
+            </li>
+            <li><strong>z-index</strong> - Controls stacking order of positioned elements</li>
+            <li><strong>stacking context</strong> - Groups of elements with their own stacking order hierarchy</li>
+        </ul>
+        <p>Understanding these positioning concepts is crucial for creating complex layouts and managing how elements
+            interact with each other in CSS.</p>
+    </section>
+
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #eee;">
+        <p>CSS Position and Z-Index Guide - Created for learning purposes</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CSS Position & Z-Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            background-color: #f0f0f0;
+            padding: 5px;
+        }
+
+        .container {
+            border: 2px solid black;
+            margin-bottom: 20px;
+            height: 200px;
+            width: 300px;
+            position: relative;
+            background-color: #f8f8f8;
+        }
+
+        .box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .scroll-box {
+            height: 200px;
+            overflow-y: auto;
+            border: 2px solid black;
+            width: 300px;
+        }
+
+        .scroll-content {
+            height: 500px;
+            padding: 10px;
+            background: #f8f8f8;
+        }
+
+        /* Simple explanation box */
+        .explain {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple CSS Position & Z-Index Examples</h1>
+
+    <!-- Static -->
+    <h2>1. Static Position (Default)</h2>
+    <div class="explain">Elements follow normal document flow.</div>
+    <div class="container">
+        <div class="box blue">Box 1</div>
+        <div class="box red">Box 2</div>
+    </div>
+    <pre>
+.box {
+  /* position: static; (default) */
+}
+  </pre>
+
+    <!-- Relative -->
+    <h2>2. Relative Position</h2>
+    <div class="explain">Moved from normal position but still takes up original space.</div>
+    <div class="container">
+        <div class="box blue" style="position: relative; left: 40px; top: 20px;">
+            Relative
+        </div>
+        <div class="box red">Static</div>
+    </div>
+    <pre>
+.blue {
+  position: relative;
+  left: 40px;
+  top: 20px;
+}
+  </pre>
+
+    <!-- Absolute -->
+    <h2>3. Absolute Position</h2>
+    <div class="explain">Removed from flow, positioned relative to parent.</div>
+    <div class="container">
+        <div class="box blue">Static</div>
+        <div class="box red" style="position: absolute; top: 20px; right: 20px;">
+            Absolute
+        </div>
+        <div class="box green" style="position: absolute; bottom: 20px; left: 20px;">
+            Absolute
+        </div>
+    </div>
+    <pre>
+.red {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.green {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+  </pre>
+
+    <!-- Fixed -->
+    <h2>4. Fixed Position</h2>
+    <div class="explain">Positioned relative to viewport, stays fixed when scrolling.</div>
+    <div class="scroll-box">
+        <div class="scroll-content">
+            <div class="box blue" style="position: fixed; top: 350px; right: 30px;">
+                Fixed
+            </div>
+            <p>Scroll down to see how fixed positioning works</p>
+            <div style="height: 100px;"></div>
+            <div class="box red">Normal box</div>
+            <div style="height: 200px;"></div>
+            <div class="box green">Another box</div>
+        </div>
+    </div>
+    <pre>
+.blue {
+  position: fixed;
+  top: 350px;
+  right: 30px;
+}
+  </pre>
+
+    <!-- Sticky -->
+    <h2>5. Sticky Position</h2>
+    <div class="explain">Becomes fixed when scrolled to threshold.</div>
+    <div class="scroll-box">
+        <div class="scroll-content">
+            <div class="box blue" style="position: sticky; top: 0;">
+                Sticky
+            </div>
+            <p>Scroll down to see the sticky box in action</p>
+            <div style="height: 50px;"></div>
+            <div class="box red">Normal box</div>
+            <div style="height: 300px;"></div>
+            <div class="box green">Another box</div>
+        </div>
+    </div>
+    <pre>
+.blue {
+  position: sticky;
+  top: 0;
+}
+  </pre>
+
+    <!-- Z-Index -->
+    <h2>6. Z-Index</h2>
+    <div class="explain">Controls stacking order. Higher number = on top.</div>
+    <div class="container">
+        <div class="box blue" style="position: absolute; left: 20px; top: 20px; z-index: 1;">
+            z-index: 1
+        </div>
+        <div class="box red" style="position: absolute; left: 50px; top: 50px; z-index: 2;">
+            z-index: 2
+        </div>
+        <div class="box green" style="position: absolute; left: 80px; top: 80px; z-index: 3;">
+            z-index: 3
+        </div>
+    </div>
+    <pre>
+.blue {
+  position: absolute;
+  z-index: 1; /* bottom */
+}
+
+.red {
+  position: absolute;
+  z-index: 2; /* middle */
+}
+
+.green {
+  position: absolute;
+  z-index: 3; /* top */
+}
+  </pre>
+
+    <!-- Stacking Context -->
+    <h2>7. Stacking Context</h2>
+    <div class="explain">Parent z-index affects all children.</div>
+    <div class="container">
+        <!-- Parent 1 -->
+        <div
+            style="position: relative; z-index: 1; border: 1px dashed blue; width: 150px; height: 150px; padding: 5px;">
+            Parent 1 (z:1)
+            <div class="box blue" style="position: absolute; right: 5px; bottom: 5px; z-index: 100;">
+                z:100
+            </div>
+        </div>
+
+        <!-- Parent 2 -->
+        <div
+            style="position: relative; z-index: 2; border: 1px dashed red; width: 150px; height: 150px; padding: 5px; margin-top: -100px; margin-left: 100px;">
+            Parent 2 (z:2)
+            <div class="box red" style="position: absolute; right: 5px; bottom: 5px; z-index: 1;">
+                z:1
+            </div>
+        </div>
+    </div>
+    <pre>
+/* Parent 1 with z-index 1 */
+.parent1 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Child has z-index 100 but still behind Parent 2 */
+.parent1 .box {
+  z-index: 100;
+}
+
+/* Parent 2 with z-index 2 */
+.parent2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Child has z-index 1 but above Parent 1's child */
+.parent2 .box {
+  z-index: 1;
+}
+  </pre>
+</body>
+
+</html>
