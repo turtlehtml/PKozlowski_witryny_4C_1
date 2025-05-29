@@ -1,0 +1,53 @@
+body {
+    font-family: Georgia;
+}
+
+.header{
+    background: #63AC74;
+    color: orange;
+    height: 140px;
+    width: 100%;
+    text-align: right;
+    font-size: 160%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.main{
+    background: #E3F6E7;
+    height: 500px;
+    padding: 20px;
+    clear: both;
+}
+
+.stopka{
+    background: #63AC74;
+    height: 150px;
+    width: 25%;
+    float: left;
+}
+
+a {
+    color: orange;
+    margin: 15px;
+}
+
+table {
+    width: 100%;
+    border: 2px solid green;
+}
+
+th {
+    background: #63AC74;
+    color: white;
+}
+
+.cena{
+    text-align: right;
+}
+.menu{
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+
+}
